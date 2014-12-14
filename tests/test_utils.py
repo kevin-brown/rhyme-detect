@@ -1,6 +1,5 @@
 from rhyme_detect import utils
 import pytest
-import unittest
 
 
 # utils.last_word
