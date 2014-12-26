@@ -16,7 +16,7 @@ def test_line_similarity_similar():
 
     index = rhymes.line_similarity(first_line, second_line)
 
-    assert index == 2/3
+    assert index == 3/4
 
 
 def test_line_similarity_far():
@@ -28,6 +28,15 @@ def test_line_similarity_far():
     assert index == 0
 
 
+def test_line_similarity_short_last_word():
+    first_line = "I love to hear her speak, yet well I know"
+    second_line = "I grant I never saw a goddess go"
+
+    index = rhymes.line_similarity(first_line, second_line)
+
+    assert index == 2/3
+
+
 def test_word_similarity_exact():
     index = rhymes.word_similarity("test", "test")
 
@@ -37,7 +46,7 @@ def test_word_similarity_exact():
 def test_word_similarity_close():
     index = rhymes.word_similarity("test", "best")
 
-    assert index == 3/4
+    assert index == 4/5
 
 
 def test_word_similarity_start():

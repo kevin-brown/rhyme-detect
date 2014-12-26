@@ -2,14 +2,18 @@ from nltk.tokenize import RegexpTokenizer
 import nltk
 
 
-def last_word(line):
+def get_nth_word(line, position):
     tokenizer = RegexpTokenizer(r"\w+")
     words = tokenizer.tokenize(line)
 
     if not words:
         raise ValueError("The given line must not be empty")
 
-    return words[-1]
+    return words[position]
+
+
+def last_word(line):
+    return get_nth_word(line, -1)
 
 
 def possible_phones(word):
